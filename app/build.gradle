@@ -19,6 +19,9 @@ android {
     }
 
     buildTypes {
+        all {
+            buildConfigField "String", "DOGS_API_KEY", DOGS_API_KEY
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -65,6 +68,20 @@ dependencies {
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.0"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.0"
+
+    //Fuel
+    implementation 'com.github.kittinunf.fuel:fuel:2.2.0'
+    implementation 'com.github.kittinunf.fuel:fuel-android:2.2.0'
+    implementation 'com.github.kittinunf.fuel:fuel-moshi:2.2.0'
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:1.9.3"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.9.3"
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
     androidTestImplementation "androidx.navigation:navigation-testing:2.3.0"
 }
